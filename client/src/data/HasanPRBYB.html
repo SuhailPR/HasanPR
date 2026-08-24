@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دراسة جدوى - محل تحميص وطحن قهوة | فيصل الجيزة 2026</title>
+<style>
+
+:root {
+  --p: #1a1a2e; --p-l: #16213e; --p-d: #0f3460;
+  --accent: #c8a45a; --accent-l: #e8d5a3; --accent-d: #a08030;
+  --ok: #27ae60; --warn: #f39c12; --danger: #e74c3c; --info: #3498db;
+  --bg: #faf9f6; --card: #fff; --txt: #2c3e50; --txt-l: #7f8c8d;
+  --brd: #e0ddd5; --sh: 0 2px 16px rgba(0,0,0,0.06); --r: 12px; --rs: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Noto Sans Arabic','Segoe UI',Tahoma,Arial,sans-serif; background:var(--bg); color:var(--txt); line-height:1.85; font-size:15px; }
+
+/* Cover */
+.cover { min-height:100vh; background:linear-gradient(135deg,var(--p),var(--p-l) 50%,var(--p-d)); display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; position:relative; overflow:hidden; padding:40px 20px; }
+.cover::before { content:''; position:absolute; top:-50%;left:-50%; width:200%;height:200%; background:radial-gradient(circle at 30% 50%,rgba(200,164,90,0.15) 0%,transparent 50%); animation:pulse 8s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:0.5} 50%{opacity:1} }
+.cover-content { position:relative; z-index:1; max-width:700px; }
+.cover-icon { font-size:80px; margin-bottom:20px; display:block; }
+.cover h1 { font-family:'Noto Serif Arabic','Times New Roman',serif; font-size:2.8em; font-weight:700; margin-bottom:10px; line-height:1.4; }
+.cover h2 { font-size:1.3em; font-weight:300; color:var(--accent-l); margin-bottom:30px; }
+.cover-badge { display:inline-block; background:var(--accent); color:var(--p); padding:6px 20px; border-radius:20px; font-weight:700; font-size:0.85em; margin-bottom:25px; }
+.cover-meta { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:30px; font-size:0.9em; color:rgba(255,255,255,0.7); }
+.cover-meta span { display:flex; align-items:center; gap:6px; }
+
+.container { max-width:960px; margin:0 auto; padding:40px 20px; }
+
+/* Sections */
+.section { background:var(--card); border-radius:var(--r); box-shadow:var(--sh); margin-bottom:30px; overflow:hidden; border:1px solid var(--brd); }
+.section-header { background:linear-gradient(135deg,var(--p),var(--p-l)); color:#fff; padding:20px 28px; display:flex; align-items:center; gap:12px; cursor:pointer; user-select:none; transition:all 0.3s; }
+.section-header:hover { filter:brightness(1.1); }
+.section-header .icon { font-size:1.5em; }
+.section-header h2 { font-size:1.2em; font-weight:700; flex:1; }
+.section-header .toggle { width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:0.8em;transition:transform 0.3s; }
+.section.collapsed .toggle { transform:rotate(-90deg); }
+.section.collapsed .section-body { display:none; }
+.section-body { padding:28px; }
+
+/* Tables */
+table { width:100%; border-collapse:collapse; margin:16px 0; font-size:0.9em; }
+thead th { background:var(--p); color:#fff; padding:12px 14px; text-align:right; font-weight:600; font-size:0.88em; }
+thead th:first-child { border-radius:0 var(--rs) 0 0; }
+thead th:last-child { border-radius:var(--rs) 0 0 0; }
+tbody td { padding:10px 14px; border-bottom:1px solid var(--brd); }
+tbody tr:last-child td { border-bottom:none; }
+tbody tr:nth-child(even) { background:#f8f7f4; }
+tbody tr:hover { background:#f0ede5; }
+
+/* Badges */
+.badge { display:inline-block; padding:3px 12px; border-radius:12px; font-size:0.8em; font-weight:600; }
+.badge-red { background:#fde8e8; color:#c0392b; }
+.badge-orange { background:#fef3e0; color:#d35400; }
+.badge-yellow { background:#fef9e7; color:#b7950b; }
+.badge-green { background:#eafaf1; color:#1e8449; }
+.badge-blue { background:#ebf5fb; color:#2471a3; }
+.badge-gold { background:#fef5e7; color:#9a7d0a; }
+
+/* Stats */
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin:20px 0; }
+.stat-card { background:linear-gradient(135deg,#f8f7f4,#f0ede5); border-radius:var(--rs); padding:20px; text-align:center; border:1px solid var(--brd); }
+.stat-card .number { font-size:1.8em; font-weight:800; color:var(--p); line-height:1.2; }
+.stat-card .label { font-size:0.82em; color:var(--txt-l); margin-top:4px; }
+.stat-card.accent .number { color:var(--accent-d); }
+.stat-card.success .number { color:var(--ok); }
+.stat-card.danger .number { color:var(--danger); }
+
+h3 { font-size:1.1em; color:var(--p); margin:24px 0 12px; padding-bottom:8px; border-bottom:2px solid var(--accent-l); display:flex; align-items:center; gap:8px; }
+h4 { font-size:1em; color:var(--p-l); margin:18px 0 10px; }
+p { margin-bottom:12px; }
+
+/* Alerts */
+.alert { padding:16px 20px; border-radius:var(--rs); margin:16px 0; font-size:0.9em; display:flex; gap:10px; align-items:flex-start; }
+.alert-danger { background:#fde8e8; border-right:4px solid var(--danger); }
+.alert-warning { background:#fef9e7; border-right:4px solid var(--warn); }
+.alert-success { background:#eafaf1; border-right:4px solid var(--ok); }
+.alert-info { background:#ebf5fb; border-right:4px solid var(--info); }
+.alert .ai { font-size:1.3em; flex-shrink:0; }
+
+/* SWOT */
+.swot-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0; }
+.swot-box { padding:16px; border-radius:var(--rs); border:2px solid; }
+.swot-box h4 { margin-top:0; border:none; padding:0; }
+.swot-box ul { padding-right:20px; font-size:0.88em; }
+.swot-box li { margin-bottom:6px; }
+.swot-s { border-color:#27ae60; background:#eafaf1; } .swot-s h4 { color:#1e8449; }
+.swot-w { border-color:#e74c3c; background:#fde8e8; } .swot-w h4 { color:#c0392b; }
+.swot-o { border-color:#3498db; background:#ebf5fb; } .swot-o h4 { color:#2471a3; }
+.swot-t { border-color:#f39c12; background:#fef9e7; } .swot-t h4 { color:#9a7d0a; }
+
+/* Timeline */
+.timeline { position:relative; padding-right:30px; margin:20px 0; }
+.timeline::before { content:''; position:absolute; right:8px; top:0; bottom:0; width:3px; background:var(--accent-l); border-radius:2px; }
+.timeline-item { position:relative; margin-bottom:20px; padding:16px; background:#f8f7f4; border-radius:var(--rs); border:1px solid var(--brd); }
+.timeline-item::before { content:''; position:absolute; right:-26px; top:20px; width:12px;height:12px;background:var(--accent);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--accent); }
+.timeline-item h4 { margin:0 0 6px; color:var(--p); font-size:0.95em; }
+.timeline-item .dur { font-size:0.8em; color:var(--accent-d); font-weight:600; }
+.timeline-item ul { padding-right:18px; font-size:0.88em; margin-top:8px; }
+.timeline-item li { margin-bottom:4px; }
+
+/* CF colors */
+.cf-pos { color:var(--ok); font-weight:700; }
+.cf-neg { color:var(--danger); font-weight:700; }
+.cf-total { background:#f0ede5 !important; font-weight:700; }
+
+/* Risk Matrix */
+.risk-matrix { display:grid; grid-template-columns:60px repeat(5,1fr); grid-template-rows:auto repeat(5,48px); gap:3px; margin:20px 0; font-size:0.8em; font-weight:600; text-align:center; }
+.risk-matrix .cell { border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.82em; }
+.risk-matrix .header { background:var(--p); color:#fff; border-radius:6px; }
+.risk-matrix .prob-label { background:var(--p-l); color:#fff; border-radius:6px; font-size:0.72em; }
+.risk-matrix .empty { background:transparent; }
+.cg { background:#27ae60; } .cy { background:#f1c40f; color:#333 !important; } .co { background:#e67e22; } .cr { background:#e74c3c; }
+.risk-matrix .r1{grid-row:6}.risk-matrix .r2{grid-row:5}.risk-matrix .r3{grid-row:4}.risk-matrix .r4{grid-row:3}.risk-matrix .r5{grid-row:2}
+.risk-matrix .c1{grid-column:2}.risk-matrix .c2{grid-column:3}.risk-matrix .c3{grid-column:4}.risk-matrix .c4{grid-column:5}.risk-matrix .c5{grid-column:6}
+.risk-legend { display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; font-size:0.8em; }
+.risk-legend span { display:flex; align-items:center; gap:5px; }
+.risk-legend .dot { width:14px;height:14px;border-radius:3px; }
+
+/* BMC */
+.bmc-grid { display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:auto auto; gap:2px; background:var(--brd); border-radius:var(--rs); overflow:hidden; margin:20px 0; }
+.bmc-box { background:var(--card); padding:16px; }
+.bmc-box h4 { color:var(--accent-d); margin:0 0 8px; font-size:0.85em; border:none; padding:0; }
+.bmc-box p,.bmc-box li { font-size:0.85em; margin-bottom:4px; }
+.bmc-center { grid-column:2; grid-row:1/3; background:linear-gradient(135deg,#fef9e7,#fef5e7); }
+.bmc-center h4 { font-size:0.95em; color:var(--p); }
+.bmc-bl { grid-column:1; grid-row:2; }
+.bmc-full { grid-column:1/-1; background:#f8f7f4; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+/* Persona */
+.persona-card { background:linear-gradient(135deg,#f8f7f4,#fef9e7); border:2px solid var(--accent-l); border-radius:var(--r); padding:24px; margin:16px 0; }
+.persona-card .name { font-size:1.2em; font-weight:700; color:var(--p); }
+.persona-card .tagline { color:var(--accent-d); font-style:italic; margin-bottom:16px; }
+.persona-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.persona-item label { font-size:0.76em; color:var(--txt-l); display:block; margin-bottom:2px; font-weight:600; }
+
+/* Check list */
+.check-list { list-style:none; padding:0; }
+.check-list li { padding:8px 0 8px 0; padding-right:30px; position:relative; border-bottom:1px dotted var(--brd); }
+.check-list li:last-child { border-bottom:none; }
+.check-list li.done::before { content:'¸5'; position:absolute; right:0; font-size:1.1em; }
+.check-list li.pending::before { content:'±0'; position:absolute; right:0; font-size:1.1em; color:var(--txt-l); }
+
+.footer { text-align:center; padding:30px 20px; color:var(--txt-l); font-size:0.8em; border-top:1px solid var(--brd); margin-top:20px; }
+
+@media print {
+  body { background:#fff; font-size:12px; }
+  .cover { min-height:auto; padding:40px; page-break-after:always; }
+  .section { box-shadow:none; border:1px solid #ddd; break-inside:avoid; }
+  .section.collapsed .section-body { display:block !important; }
+  .toggle { display:none !important; }
+}
+@media (max-width:640px) {
+  .cover h1 { font-size:2em; }
+  .cover h2 { font-size:1.1em; }
+  .stats-grid { grid-template-columns:1fr 1fr; }
+  .bmc-grid,.swot-grid,.persona-grid { grid-template-columns:1fr; }
+  .bmc-center { grid-column:1; grid-row:auto; }
+  .bmc-full { grid-template-columns:1fr; }
+  table { font-size:0.8em; }
+  thead th,tbody td { padding:8px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-content">
+    <span class="cover-icon">&#9749;</span>
+    <h1>دراسة جدوى شاملة</h1>
+    <h2>مشروع محل تحميص وطحن قهوة صغير</h2>
+    <div class="cover-badge">بيع قهوة فقط | تحميص + طحن | B2C | شارع المطبعة — فيصل</div>
+    <div class="cover-meta">
+      <span>&#128197; أغسطس 2026</span>
+      <span>&#128205; المطبعة، فيصل، الجيزة</span>
+      <span>&#127470;&#65039; جميع الأرقام بالجنيه المصري</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<div class="section" id="sec1">
+  <div class="section-header" onclick="toggleSection('sec1')">
+    <span class="icon">&#128203;</span>
+    <h2>01 | الملخص التنفيذي</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<p>يقدم هذا المستند <strong>دراسة جدوى شاملة</strong> لمشروع <strong>محل بيع وتحميص وطحن قهوة صغير</strong> في منطقة <strong>شارع المطبعة، فيصل، الجيزة</strong>. المشروع يستهدف قطاع الأفراد (B2C) بهدف بناء علامة تجارية مميزة تقدم قهوة محمصة وطازجة يومياً. الدراسة مبنية على أسعار حقيقية من السوق المصري 2025-2026 ومنطقة فيصل تحديداً، وهي جاهزة للعرض أمام اللجان والجهات التمويلية.</p>
+
+<div class="stats-grid">
+  <div class="stat-card accent"><div class="number">60K-100K</div><div class="label">رأس المال المطلوب (ج.م)</div></div>
+  <div class="stat-card"><div class="number">250 جم - 1 كجم</div><div class="label">أحجام العبوات</div></div>
+  <div class="stat-card success"><div class="number">6-8</div><div class="label">أشهر للوصول للربحية</div></div>
+  <div class="stat-card danger"><div class="number">10</div><div class="label">مخاطر محددة بتخطيط معالجة</div></div>
+</div>
+
+<h3>&#128203; نظرة سريعة على المشروع</h3>
+<table><thead><tr><th>البند</th><th>التفاصيل</th></tr></thead><tbody><tr><td><strong>نوع النشاط</strong></td><td>تحميص وطحن قهوة وبيعها بالتجزئة (قهوة فقط — بدون بهارات)</td></tr><tr><td><strong>الموقع</strong></td><td>شارع المطبعة، فيصل، الجيزة — منطقة تجارية نشطة</td></tr><tr><td><strong>حجم المشروع</strong></td><td>صغير / متناهي الصغر</td></tr><tr><td><strong>نموذج العمل</strong></td><td>B2C — بيع مباشر من المحل + واتساب بزنس + إنستجرام</td></tr><tr><td><strong>الهدف الاستراتيجي</strong></td><td>بناء علامة تجارية قهوة محمصة طازجة قابلة للتوسع</td></tr><tr><td><strong>الميزة التنافسية</strong></td><td>تحميص يومي أمام العميل + طحن حسب الطلب + درجات تحميص متعددة</td></tr><tr><td><strong>منهجيات الدراسة</strong></td><td>PMBOK | Lean Startup | Design Thinking | تحليل مالي واقعي</td></tr></tbody></table>
+<div class="alert alert-warning">
+  <span class="ai">&#9888;&#65039;</span>
+  <div><strong>ملاحظة:</strong> هذه الدراسة مبنية على أسعار بحثية حقيقية من السوق المصري (أغسطس 2026) وهي قابلة للتحديث عند الحصول على عروض أسعار فعلية من الموردين. يُنصح بإجراء مقابلات عملاء وتحديث الأرقام قبل الالتزام المالي النهائي.</div>
+</div></div>
+</div>
+<div class="section" id="sec2">
+  <div class="section-header" onclick="toggleSection('sec2')">
+    <span class="icon">&#127919;</span>
+    <h2>02 | وصف المشروع (للعرض أمام اللجان)</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<div class="alert alert-info">
+  <span class="ai">&#128227;</span>
+  <div><strong>هذا القسم مُصمم خصيصاً للعرض أمام اللجان</strong> — يشرح المشروع ونشاطه الأساسي والفئة المستهدفة وموقع البداية وخطة التوسع بشكل متكامل.</div>
+</div>
+
+<h3>&#127919; نبذة عن المشروع ونشاطه الأساسي</h3>
+<p>المشروع هو <strong>محل صغير لتحميص وطحن وبيع القهوة</strong> بمنطقة المطبعة فيصل بالجيزة. يقدم المشروع خدمة فريدة للعميل المصري: <strong>قهوة محمصة طازجة يومياً</strong> وليس بن جاهز محمص من أشهر أو موردين. العميل يشتري حبوب محمصة أو يطلب طحنها حسب درجته المفضلة (خشن للفرنش بريس، ناعم للترك، متوسط للموكا). هذا النموذج يُلبي احتياج شريحة متزايدة من المصريين الذين باتوا يدركون فرق القهوة الطازجة عن المطحونة الجاهزة في السوبرماركت.</p>
+<p>النشاط الأساسي يتكون من ثلاث مراحل متسلسلة: <strong>(1)</strong> شراء حبوب البن الخام (الأخضر) من موردين معتمدين، <strong>(2)</strong> تحميصها في المحل أمام العملاء أو حسب الطلب بدرجات تحميص مختلفة (خفيف، متوسط، داكن)، <strong>(3)</strong> طحنها وتعبئتها في أكياس فاكيوم مع لاصق يحمل الشعار وتاريخ التحميص ودرجة الطحن.</p>
+
+<h3>&#128100; الفئة المستهدفة</h3>
+<p>الفئة الأساسية هي <strong>سكان فيصل والهرم والدقي والطالبية</strong> من الطبقة المتوسطة والمتوسطة-العليا (25-50 سنة) الذين يشربون القهوة يومياً ويبحثون عن جودة أعلى من البن الجاهز. يشمل ذلك موظفين، أسريات، هواة القهوة المتخصصة، وطلاب جامعات. الفئة الثانوية هي محبو القهوة المتخصصة في مناطق أبعد (المعادي، الزمالك، التجمع) الذين يطلبون أونلاين عبر واتساب وإنستجرام.</p>
+
+<h3>&#128205; موقع البداية: شارع المطبعة — فيصل</h3>
+<p>تم اختيار منطقة <strong>المطبعة فيصل</strong> لعدة أسباب استراتيجية:</p>
+<table><thead><tr><th>الميزة</th><th>التفاصيل</th></tr></thead><tbody><tr><td><strong>حركة مرور عالية</strong></td><td>شارع المطبعة من الشوارع التجارية النشطة في فيصل، يخدم مناطق الهرم وفيصل والطالبية</td></tr><tr><td><strong>إيجار معقول</strong></td><td>محل 30-40 متر بتكلفة تقديرية 3,000-5,000 ج.م/شهر (أرخص من الدقي أو المعادي بنسبة 40-60%)</td></tr><tr><td><strong>قرب من الموردين</strong></td><td>قريب من مناطق توفر البن الخام الجملة (العاشر، حلوان، المعادي)</td></tr><tr><td><strong>جمهور مستهدف</strong></td><td>سكان فيصل والهرم من طبقة متوسطة تهتم بالجودة وتقدر المنتج الطازج</td></tr><tr><td><strong>مجتمع تجاري</strong></td><td>وجود محلات بقالة فاخرة ومقاهي في المنطقة = فرص شراكة وتوزيع مستقبلية</td></tr></tbody></table>
+
+<h3>&#128200; خطة التوسع</h3>
+<p>المشروع يبدأ صغيراً في محل واحد بفيصل، مع خطة توسع مرحلية:</p>
+<table><thead><tr><th>المرحلة</th><th>المدة</th><th>التوسع</th></tr></thead><tbody><tr><td><span class="badge badge-green">المرحلة 1</span></td><td>الشهر 1-6</td><td>إثبات النموذج في المحل الأول + بناء قاعدة عملاء 200-300 عميل</td></tr><tr><td><span class="badge badge-blue">المرحلة 2</span></td><td>الشهر 6-12</td><td>إطلاق المبيعات أونلاين لكل القاهرة + باقات اشتراك شهرية</td></tr><tr><td><span class="badge badge-gold">المرحلة 3</span></td><td>السنة 2</td><td>فتح كشك ثانٍ في الدقي أو المعادي + اتفاقيات مع بقالات فاخرة</td></tr><tr><td><span class="badge badge-red">المرحلة 4</span></td><td>السنة 3+</td><td>تحويل لماركة قهوة معروفة + محامص أكبر + بيع B2B لمقاهي</td></tr></tbody></table></div>
+</div>
+<div class="section" id="sec3">
+  <div class="section-header" onclick="toggleSection('sec3')">
+    <span class="icon">&#128202;</span>
+    <h2>03 | تحليل السوق TAM/SAM/SOM</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<p>سوق القهوة في مصر من الأسواق الأكبر والأكثر استمرارية. المصريون من أكبر مستهلكي القهوة عالمياً، والطلب يومي وليس موسمياً. مع ثقافة القهوة المتخصصة آخذة في الانتشار (إسبريسو، فرنش بريس، فيلت، موكا)، تتزايد فرص مشاريع القهوة المحمصة الطازجة.</p>
+
+<h3>&#128202; حجم السوق — TAM / SAM / SOM</h3>
+<table><thead><tr><th>المستوى</th><th>التعريف</th><th>الحساب</th><th>النتيجة</th></tr></thead><tbody><tr><td><strong>TAM</strong><br><span class="badge badge-blue">إجمالي السوق</span></td><td>مستهلكو القهوة في مصر المهتمون بالجودة</td><td>105 مليون x 65% x 30%</td><td>~20 مليون مستهلك</td></tr><tr><td><strong>SAM</strong><br><span class="badge badge-gold">السوق المتاح</span></td><td>المهتمون بالقهوة المحمصة في القاهرة والجيزة</td><td>21 مليون x 65% x 30%</td><td>~4.1 مليون</td></tr><tr><td><strong>SOM</strong><br><span class="badge badge-green">المستهدف (سنة 1)</span></td><td>حصتك المستهدفة في أول سنة</td><td>4.1 مليون x 0.1%</td><td>~4,100 عميل محتمل</td></tr></tbody></table>
+<h3>&#128176; تقدير الإيرادات المحتملة</h3>
+<table><thead><tr><th>الافتراض</th><th>القيمة</th></tr></thead><tbody><tr><td>متوسط سعر الطلب</td><td><strong>80-120 ج.م</strong> (250 جم محمصة + مطحونة)</td></tr><tr><td>متوسط تكرار الشراء/السنة</td><td><strong>6-8 مرات</strong> (شهرياً لمحبي القهوة)</td></tr><tr><td>عملاء فعليين (سنة 1)</td><td>500-1,000 عميل (من 4,100 محتمل)</td></tr><tr><td><strong>إيرادات السنة الأولى (واقعي)</strong></td><td><strong>150,000 - 400,000 ج.م</strong></td></tr></tbody></table>
+
+<h3>&#127758; خصوصيات المستهلك المصري</h3>
+<table><thead><tr><th>البعد</th><th>السلوك</th><th>التأثير على مشروعك</th></tr></thead><tbody><tr><td>الحساسية السعرية</td><td>يقارن لكن يدفع أكثر إذا وثق بالجودة</td><td>سعّر أعلى 10-15% مع تبرير الجودة (طازج، محمص يومي)</td></tr><tr><td>إشارات الثقة</td><td>يتأثر بالتوصية أكثر من الإعلان</td><td>كلمة فم + تذوق مجاني + شهادات عملاء</td></tr><tr><td>تفضيل الدفع</td><td>كاش 70% | فوري 20% | بطاقة 10%</td><td>كاش هو الملك</td></tr><tr><td>سلوك التذوق</td><td>لن يشتري قهوة جديدة بدون يتذوقها</td><td>التذوق المجاني شرط أساسي للإطلاق</td></tr><tr><td>العلاقات الشخصية</td><td>يفضل التعامل مع أشخاص يثق بهم</td><td>واتساب بزنس + تواصل شخصي</td></tr></tbody></table></div>
+</div>
+<div class="section" id="sec4">
+  <div class="section-header" onclick="toggleSection('sec4')">
+    <span class="icon">&#128100;</span>
+    <h2>04 | شخصية العميل المستهدف (Customer Persona)</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<div class="alert alert-info">
+  <span class="ai">&#8505;&#65039;</span>
+  <div><strong>تنبيه:</strong> هذه الشخصيات مبنية على تحليل السوق. يُوصى بإجراء 10 مقابلات عملاء حقيقيين في منطقة فيصل للتحقق والتحديث.</div>
+</div>
+
+<div class="persona-card">
+  <div class="name">&#128105;&#8205;&#128188; نور (30 سنة) — الشخصية الأساسية</div>
+  <div class="tagline">“بحب أشرب قهوة فلت في البيت بس مش لاقية بن طازج بنكهة ثابتة”</div>
+  <div class="persona-grid">
+    <div class="persona-item"><label>&#128176; الدخل</label><span>8,000 - 15,000 ج.م/شهر</span></div>
+    <div class="persona-item"><label>&#127968; المنطقة</label><span>فيصل، الهرم، الدقي</span></div>
+    <div class="persona-item"><label>&#127970; العمل</label><span>موظفة / محاسبة / مديرة</span></div>
+    <div class="persona-item"><label>&#128106; الأسرة</label><span>متزوجة أو أعزب، 2-4 أفراد</span></div>
+    <div class="persona-item"><label>&#128241; القنوات</label><span>إنستجرام + واتساب + فيسبوك</span></div>
+    <div class="persona-item"><label>&#128722; الدفع</label><span>كاش أو فوري</span></div>
+  </div>
+  <h4 style="margin-top:16px">&#127919; أهدافها</h4>
+  <ul style="padding-right:20px; font-size:0.9em"><li>تجد قهوة محمصة طازجة بنكهة ثابتة كل مرة</li><li>تحدد درجة الطحن حسب جهازها (فلت، موكا، ترك)</li><li>تشتري بكميات صغيرة مناسبة (100-250 جم)</li></ul>
+  <h4>&#128549; نقاط ألمها</h4>
+  <ul style="padding-right:20px; font-size:0.9em"><li>البن من السوبرماركت محمص من شهرين أو أكثر — ما بعرفش تاريخ التحميص</li><li>المطاحن الكبيرة تبيع بن جاهز بدون خيار درجة التحميص</li><li>مفيش مكان يشرحلها فرق درجات التحميص (لايت، ميديوم، دارك)</li></ul>
+</div>
+
+<div class="persona-card" style="border-color:var(--info)">
+  <div class="name">&#128104;&#8205;&#127912; أحمد (40 سنة) — الشخصية الثانوية</div>
+  <div class="tagline">“عايز أعمل قهوة إسبريسو زي المحلات — بن محمص بإيدي”</div>
+  <div class="persona-grid">
+    <div class="persona-item"><label>&#128176; الدخل</label><span>15,000 - 30,000 ج.م/شهر</span></div>
+    <div class="persona-item"><label>&#127968; المنطقة</label><span>فيصل، 6 أكتوبر، الشيخ زايد</span></div>
+    <div class="persona-item"><label>&#127970; العمل</label><span>صاحب عمل / مدير / مهندس</span></div>
+    <div class="persona-item"><label>&#128241; القنوات</label><span>فيسبوك + توصيات الأصدقاء</span></div>
+  </div>
+  <h4 style="margin-top:16px">&#127919; أهدافه</h4>
+  <ul style="padding-right:20px; font-size:0.9em"><li>يجد بن من مصادر متعددة (إثيوبي، كولومبي، يمني، برازيلي)</li><li>يحدد درجة التحميص والطحن بنفسه</li><li>يقدم قهوة احترافية لضيوفه</li></ul>
+</div></div>
+</div>
+<div class="section" id="sec5">
+  <div class="section-header" onclick="toggleSection('sec5')">
+    <span class="icon">&#128293;</span>
+    <h2>05 | تحليل المنافسين (SWOT)</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<p>منطقة فيصل والجيزة بها عدة منافسين في مجال بيع وتحميص البن. التحليل التالي مبني على بحث فعلي في المنطقة:</p>
+
+<h3>&#128293; أبرز المنافسين في المنطقة</h3>
+<table><thead><tr><th>المنافس</th><th>الموقع</th><th>نقاط القوة</th><th>نقاط الضعف</th></tr></thead><tbody><tr><td><strong>بن الوالي</strong></td><td>الهرم — شارع أورمان</td><td>علامة معروفة + تنوع + مبيعات أونلاين</td><td>لا تحميس أمام العميل + أسعار مرتفعة نسبياً</td></tr><tr><td><strong>محلات البن التقليدية بفيصل</strong></td><td>شارع فيصل الرئيسي</td><td>أسعار منخفضة + معروفة لسكان المنطقة</td><td>جودة غير ثابتة + تغليف بسيط + لا علامة تجارية</td></tr><tr><td><strong>متاجر القهوة الأونلاين</strong></td><td>إنستجرام/فيسبوك</td><td>تسويق جيد + تغليف جميل</td><td>أسعار مرتفعة جداً + لا يملكون محامص (يشترون جاهز) + لا تذوق</td></tr><tr><td><strong>السوبرماركت (سبينالس، كارفور)</strong></td><td>كل المنطقة</td><td>وصول سهل + أسعار معروفة</td><td>بن محمص من فترات طويلة + لا طعم طازج + لا تخصص</td></tr></tbody></table>
+
+<h3>&#127919; تحليل SWOT لمشروعك</h3>
+<div class="swot-grid">
+  <div class="swot-box swot-s"><h4>&#9989; نقاط القوة</h4><ul>
+    <li>تحميص يومي وطازج أمام العميل = ميزة فريدة</li>
+    <li>اختيار درجة التحميص والطحن حسب طلب العميل</li>
+    <li>تغليف فاكيوم مع تاريخ تحميص + شعار احترافي</li>
+    <li>تكاليف تشغيل منخفضة (مشروع صغير)</li>
+    <li>موقع فيصل = إيجار أرخص + حركة تجارية</li>
+  </ul></div>
+  <div class="swot-box swot-w"><h4>&#10060; نقاط الضعف</h4><ul>
+    <li>لا خبرة سابقة في التحميص</li>
+    <li>علامة تجارية جديدة غير معروفة</li>
+    <li>ميزانية تسويق محدودة</li>
+    <li>قدرة إنتاج محدودة (محمصة 1-2 كجم)</li>
+  </ul></div>
+  <div class="swot-box swot-o"><h4>&#127775; الفرص</h4><ul>
+    <li>طلب متزايد على القهوة المحمصة الطازجة في مصر</li>
+    <li>ثقافة القهوة المتخصصة في انتشار سريع</li>
+    <li>لا يوجد منافس يقدم تحميص أمام العميل في فيصل</li>
+    <li>إمكانية البيع أونلاين لكل مصر</li>
+  </ul></div>
+  <div class="swot-box swot-t"><h4>&#9888;&#65039; التهديدات</h4><ul>
+    <li>تقلب أسعار البن الأخضر المستورد (الدولار)</li>
+    <li>دخول سلاسل كبيرة (العدواني، إلخ) لسوق القهوة المتخصصة</li>
+    <li>التضخم وتأثيره على القدرة الشرائية</li>
+    <li>صعوبة تراخيص NFSA وتأخيرها</li>
+  </ul></div>
+</div>
+
+<h3>&#128640; استراتيجية التمييز (3 محاور لا يقدمها المنافسون مجتمعة)</h3>
+<div class="alert alert-success">
+  <span class="ai">&#128640;</span>
+  <div>
+    <strong>1. التحميص اليومي أمام العميل</strong> — العميل يشوف ويرائح ويحدد درجة التحميص بنفسه (Light, Medium, Dark)<br>
+    <strong>2. طحن حسب الطلب</strong> — يحدد درجة الطحن لجهازه (خشن للفرنش بريس، ناعم للترك، متوسط للموكا)<br>
+    <strong>3. تغليف فاكيوم مع تاريخ التحميص</strong> — كل عبوة تحمل: الشعار + تاريخ التحميص + درجة التحميص + درجة الطحن + مدة الصلاحية
+  </div>
+</div></div>
+</div>
+<div class="section" id="sec6">
+  <div class="section-header" onclick="toggleSection('sec6')">
+    <span class="icon">&#128230;</span>
+    <h2>06 | تحليل الموردين</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<p>يحتاج المشروع موردَين رئيسيين: <strong>مورد حبوب بن خام (أخضر)</strong> و<strong>مورد مستلزمات التغليف</strong>. بناءً على بحث السوق:</p>
+
+<h3>&#127793; موردو البن الخام (الأخضر)</h3>
+<table><thead><tr><th>المصدر</th><th>المنطقة</th><th>المنتجات</th><th>ملاحظات</th></tr></thead><tbody><tr><td><strong>موردي العاشر من رمضان</strong></td><td>العاشر، القاهرة</td><td>بن أخضر بكل الأصول (برازيلي، إثيوبي، كولومبي، يمني)</td><td>أسعار جملة منخفضة + تنوع كبير + شحن متاح</td></tr><tr><td><strong>منطقة بولاق الدكرور</strong></td><td>الدقي، الجيزة</td><td>بن أخضر + محمص جاهز</td><td>قريب من فيصل + أسعار منافسة</td></tr><tr><td><strong>موردي المعادي</strong></td><td>المعادي، القاهرة</td><td>بن متخصص (إثيوبي يرغاشيف، كينيا AA)</td><td>أعلى جودة + أسعار أعلى</td></tr><tr><td><strong>استيراد مباشر</strong></td><td>عبر شركات استيراد</td><td>حاويات بن أخضر (60 كجم/كيس)</td><td>أرخص لكميات كبيرة (100+ كجم) + يحتاج تخزين</td></tr></tbody></table>
+<div class="alert alert-warning">
+  <span class="ai">&#8505;&#65039;</span>
+  <div><strong>نصيحة:</strong> ابدأ بشراء 20-50 كجم من 2-3 موردين مختلفين، وجّرب التحميص، وقارن الجودة والأسعار قبل الالتزام بمورد واحد. طلب عينات قبل الشراء أمر طبيعي في هذه الصناعة.</div>
+</div>
+
+<h3>&#128230; موردو المستلزمات (تغليف + مطبوعات)</h3>
+<table><thead><tr><th>المستلزم</th><th>مصدر السعر</th><th>السعر التقديري</th><th>ملاحظات</th></tr></thead><tbody><tr><td>أكياس فاكيوم سيلفر (1 كجم)</td><td>بحث سوق — السفافة باك</td><td>~230 ج.م/كجم</td><td>يكفي لـ 40-50 عبوة (250 جم)</td></tr><tr><td>أكياس فاكيوم كرافت مطبوع</td><td>مصنع تغليف</td><td>~350-500 ج.م/كجم</td><td>يحتاج طباعة الشعار — أقل كمية 1000 قطعة</td></tr><tr><td>استيكر لاصق (شعار + بيانات)</td><td>ملوك الاستيكر وغيرهم</td><td>~1,000-1,400 ج.م / 1000 قطعة</td><td>مقاس 5x5 أو 8x5 سم — مطبوع بالشعار</td></tr><tr><td>لافتة المحل (فينيل)</td><td>مطبوعات فيصل/هرم</td><td>~1,500-3,000 ج.م</td><td>تصميم + طباعة + تركيب</td></tr><tr><td>أكواب تذوق ورقية</td><td>جملة تغليف</td><td>~200-400 ج.م / 1000 كوب</td><td>للتذوق المجاني في المحل</td></tr></tbody></table></div>
+</div>
+<div class="section" id="sec7">
+  <div class="section-header" onclick="toggleSection('sec7')">
+    <span class="icon">&#11035;&#65039;</span>
+    <h2>07 | نموذج العمل (Business Model Canvas)</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<div class="bmc-grid">
+  <div class="bmc-box">
+    <h4>&#128101; شرائح العملاء</h4>
+    <ul>
+      <li>الأساسية: سكان فيصل والهرم 25-45 سنة (طبقة متوسطة)</li>
+      <li>الثانوية: محبو القهوة المتخصصة (إسبريسو، فلت)</li>
+      <li>هواة القهوة المنزلية</li>
+      <li>مقاهي صغيرة تطلب بالجملة (B2B مستقبلاً)</li>
+    </ul>
+  </div>
+  <div class="bmc-box">
+    <h4>&#128232; القنوات</h4>
+    <ul>
+      <li>المحل (بيع مباشر + تذوق + تحميص أمام العميل)</li>
+      <li>واتساب بزنس (طلبات + تواصل مباشر)</li>
+      <li>إنستجرام (محتوى بصري + كتالوج + ستوريات)</li>
+      <li>فيسبوك (مجموعات محلية + إعلان مستهدف لاحقاً)</li>
+      <li>توصيل عبر Bosta / مندوب خاص</li>
+    </ul>
+  </div>
+  <div class="bmc-box">
+    <h4>&#129309; العلاقات مع العملاء</h4>
+    <ul>
+      <li>خدمة شخصية (تذوق + نصيحة درجة تحميص وطحن)</li>
+      <li>برنامج ولاء (الطلب السادس بخصم 20%)</li>
+      <li>محتوى تعليمي (فيديوهات تحضير قهوة بالمنزل)</li>
+      <li>تواصل مستمر عبر واتساب (عروض + منتجات جديدة)</li>
+    </ul>
+  </div>
+  <div class="bmc-box bmc-center">
+    <h4>&#11088; القيمة المقدمة</h4>
+    <p>للمصري اللي بيشرب قهوة يومياً ومحبط من جودة البن الجاهز، نقدم <strong>قهوة محمصة وطازجة يومياً</strong> بدرجة تحميص يختارها العميل نفسه، مع طحن حسب طلبه وتغليف فاكيوم يحفظ النكهة لأسابيع.</p>
+    <p style="margin-top:12px;font-size:0.88em"><strong>على عكس:</strong> السوبرماركت (بن محمص من Unknown date) والمحلات التقليدية (جودة غير ثابتة + لا خيار تحميص)، نحن نحمّص قدام العميل ونضمن الطزاجة والنكهة.</p>
+  </div>
+  <div class="bmc-box">
+    <h4>&#129309; الشركاء الرئيسيون</h4>
+    <ul>
+      <li>موردو بن أخضر (العاشر، بولاق، المعادي)</li>
+      <li>موردو أكياس فاكيوم ومستلزمات تغليف</li>
+      <li>شركات التوصيل (Bosta، Rabbit)</li>
+      <li>مصمم جرافيك (الشعار والهوية)</li>
+      <li>مختبر معتمد (تحاليل NFSA)</li>
+      <li>مطبوعات (استيكر + لافتة)</li>
+    </ul>
+  </div>
+  <div class="bmc-box">
+    <h4>&#9881;&#65039; الأنشطة الرئيسية</h4>
+    <ul>
+      <li>شراء وتخزين حبوب البن الأخضر</li>
+      <li>تحميص القهوة (النشاط الجوهري)</li>
+      <li>الطحن والتعبئة بالفاكيوم</li>
+      <li>التسويق الميداني والتذوق</li>
+      <li>إدارة الطلبات أونلاين</li>
+      <li>ضبط الجودة وتواريخ الصلاحية</li>
+    </ul>
+  </div>
+  <div class="bmc-box bmc-bl">
+    <h4>&#128230; الموارد الرئيسية</h4>
+    <ul>
+      <li>محمصة قهوة (1-2 كجم)</li>
+      <li>مطحنة بن احترافية</li>
+      <li>ماكينة فاكيوم</li>
+      <li>ميزان رقمي دقيق</li>
+      <li>الموقع (محل 30-40 م فيصل)</li>
+      <li>الهوية البصرية والشعار</li>
+    </ul>
+  </div>
+  <div class="bmc-box bmc-full">
+    <div>
+      <h4>&#128176; هيكل التكاليف</h4>
+      <ul>
+        <li><strong>ثابتة:</strong> إيجار المحل + رواتب + مرافق + اشتراكات</li>
+        <li><strong>متغيرة:</strong> بن أخضر + أكياس فاكيوم + استيكر + توصيل</li>
+        <li><strong>مرة واحدة:</strong> معدات + تراخيص NFSA + تصميم هوية + لافتة</li>
+        <li><strong>Inflation Buffer:</strong> +15-20% على التكاليف المتغيرة</li>
+      </ul>
+    </div>
+    <div>
+      <h4>&#128200; مصادر الإيرادات</h4>
+      <ul>
+        <li><strong>بيع مباشر:</strong> 65% من الإيرادات (المحل + واتساب)</li>
+        <li><strong>أونلاين:</strong> 25% (إنستجرام + فيسبوك + توصيل)</li>
+        <li><strong>باقات وهدايا:</strong> 10% (باقات قهوة + هدايا)</li>
+        <li><strong>طرق الدفع:</strong> كاش 70% | فوري 20% | بطاقة 10%</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="section" id="sec8">
+  <div class="section-header" onclick="toggleSection('sec8')">
+    <span class="icon">&#128230;</span>
+    <h2>08 | قائمة المستلزمات التأسيسية والتشغيلية</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<div class="alert alert-success">
+  <span class="ai">&#128230;</span>
+  <div><strong>القائمة التالية مبنية على أسعار حقيقية من السوق المصري (أغسطس 2026)</strong> — تم البحث في أولكس، جوميا، مواقع الموردين، وصفحات فيسبوك التجارية. الأسعار تقديرية وقد تختلف قليلاً حسب المورد والمواصفات.</div>
+</div>
+
+<h3>&#128230; أولاً: قائمة المستلزمات التأسيسية (مرة واحدة)</h3>
+<table><thead><tr><th>#</th><th>المعدة / المستلزم</th><th>المواصفات</th><th>سعر تقديري (ج.م)</th><th>مصدر السعر</th><th>ملاحظات</th></tr></thead><tbody><tr><td>1</td><td><strong>محمصة قهوة</strong></td><td>سعة 1-2 كجم، كهربائية أو غاز، مع شفاط دخان</td><td><strong>15,000 - 35,000</strong></td><td>هورس مان / أولكس / الموردين</td><td>أهم معددة — ابدأ بسعة 1 كجم لو الميزانية ضيقة</td></tr><tr><td>2</td><td><strong>مطحنة بن احترافية</strong></td><td>ترس سباعي أو مخروطية، سعة 500+ جم</td><td><strong>4,000 - 8,000</strong></td><td>Coffee Town / جوميا / أولكس</td><td>لا تستخدم مطحنة منزلية — تحتاج احترافية تتحمل الاستخدام اليومي</td></tr><tr><td>3</td><td><strong>ماكينة فاكيوم</strong></td><td>ماكينة لحام + تفريغ هواء (تخمة)، مقاس 40 سم</td><td><strong>2,500 - 6,000</strong></td><td>مكتبة المهندس منسي / الموردين</td><td>لختم أكياس الفاكيوم — ضرورية لحفظ القهوة</td></tr><tr><td>4</td><td><strong>ميزان رقمي دقيق</strong></td><td>دقة 0.1 جم، سعة 3 كجم</td><td><strong>300 - 500</strong></td><td>جوميا / مكتبات المعدات</td><td>لوزن البن بدقة عند التحميص والتعبئة</td></tr><tr><td>5</td><td><strong>NFSA + تحاليل + تراخيص</strong></td><td>تسجيل القائمة البيضاء + تحاليل ميكروبيولوجية</td><td><strong>10,000 - 18,000</strong></td><td>بوابة NFSA / معامل معتمدة</td><td>إلزامي قانوناً — لا تبدأ بدونه</td></tr><tr><td>6</td><td><strong>تصميم هوية بصرية + شعار</strong></td><td>شعار + ألوان + خطوط + دليل استخدام</td><td><strong>2,000 - 5,000</strong></td><td>مصمم فريلانسر / مكتب تصميم</td><td>استثمار مهم للعلامة التجارية</td></tr><tr><td>7</td><td><strong>لافتة المحل</strong></td><td>فينيل خارجي + تصميم + تركيب</td><td><strong>1,500 - 3,000</strong></td><td>مطبوعات فيصل / هرم</td><td>أول انطباع للعميل — لا تبخل فيها</td></tr><tr><td>8</td><td><strong>تجهيز المحل (بسيط)</strong></td><td>رفوف + طاولة عرض + مكان للمحمصة + تنظيف</td><td><strong>3,000 - 8,000</strong></td><td>نجار + دهانات</td><td>مشروع صغير = تجهيز بسيط وأنيق</td></tr><tr><td>9</td><td><strong>أدوات تشغيل</strong></td><td>ملاعق، قمع، فرش تنظيف، حاويات تخزين بُن</td><td><strong>500 - 1,500</strong></td><td>سوق الحرفيين / جملة</td><td>حاويات محكمة الإغلاق ضرورية للبن</td></tr></tbody></table>
+<div class="stats-grid">
+  <div class="stat-card danger"><div class="number">38,800 - 85,000</div><div class="label">إجمالي التأسيس (ج.م)</div></div>
+  <div class="stat-card accent"><div class="number">~55,000</div><div class="label">القيمة المتوسطة الموصى بها</div></div>
+</div>
+
+<h3>&#128260; ثانياً: قائمة المستلزمات التشغيلية (مستمرة)</h3>
+<table><thead><tr><th>#</th><th>المستلزم</th><th>التفاصيل</th><th>التكلفة الشهرية التقديرية</th><th>ملاحظات</th></tr></thead><tbody><tr><td>1</td><td><strong>حبوب بن أخضر</strong></td><td>20-50 كجم/شهر حسب الطلب</td><td><strong>5,000 - 15,000</strong></td><td>أكبر بند متغير — سعر الكجم 250-400 ج.م</td></tr><tr><td>2</td><td><strong>أكياس فاكيوم سيلفر</strong></td><td>مقاسات 250 جم و 500 جم</td><td><strong>500 - 1,200</strong></td><td>~230 ج.م/كجم من السفافة باك</td></tr><tr><td>3</td><td><strong>استيكر لاصق (شعار)</strong></td><td>1000-2000 قطعة/شهر</td><td><strong>200 - 500</strong></td><td>~1,000-1,400 ج.م / 1000 قطعة</td></tr><tr><td>4</td><td><strong>إيجار المحل</strong></td><td>30-40 متر في المطبعة فيصل</td><td><strong>3,000 - 5,000</strong></td><td>بناءً على أسعار إعلانات فيصل الحالية</td></tr><tr><td>5</td><td><strong>مرافق (كهرباء + مياه)</strong></td><td>كهرباء للمحمصة + مياه للتنظيف</td><td><strong>1,000 - 2,000</strong></td><td>المحمصة تستهلك كهرباء أكبر</td></tr><tr><td>6</td><td><strong>إنترنت + موبايل</strong></td><td>إنترنت المحل + باقة اتصالات</td><td><strong>300 - 500</strong></td><td>ضروري للتواصل والسوشيال ميديا</td></tr><tr><td>7</td><td><strong>مواد تنظيف</strong></td><td>تنظيف يومي للمعدات والمحل</td><td><strong>200 - 400</strong></td><td>نظافة المعدات ضرورية لجودة القهوة</td></tr><tr><td>8</td><td><strong>أكواب تذوق</strong></td><td>أكواب ورقية صغيرة + أعواد</td><td><strong>100 - 300</strong></td><td>للتذوق المجاني = أقوى أداة تسويق</td></tr><tr><td>9</td><td><strong>توصيل</strong></td><td>طلبات أونلاين (Bosta / مندوب)</td><td><strong>500 - 2,000</strong></td><td>حسب حجم الطلبات الأونلاين</td></tr><tr><td>10</td><td><strong>تسويق</strong></td><td>سوشيال ميديا + تذوق + عروض</td><td><strong>1,000 - 3,000</strong></td><td>أول 3 أشهر أعلى ثم تنخفض</td></tr></tbody></table>
+<div class="stats-grid">
+  <div class="stat-card"><div class="number">11,800 - 29,900</div><div class="label">إجمالي المصروفات التشغيلية الشهرية (ج.م)</div></div>
+  <div class="stat-card accent"><div class="number">~18,000</div><div class="label">المتوسط الشهري المتوقع</div></div>
+</div></div>
+</div>
+<div class="section" id="sec9">
+  <div class="section-header" onclick="toggleSection('sec9')">
+    <span class="icon">&#9888;&#65039;</span>
+    <h2>09 | تحليل المخاطر (تمويلية + إنتاجية + تشغيلية + رأس مال)</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<div class="alert alert-danger">
+  <span class="ai">&#128657;</span>
+  <div><strong>تنبيه:</strong> تم تصنيف المخاطر إلى 4 فئات مستقلة كما هو مطلوب للعرض أمام اللجان: <strong>تمويلية، إنتاجية، تشغيلية، ورأس مال</strong>.</div>
+</div>
+
+<h3>&#128176; أولاً: المخاطر التمويلية</h3>
+<table><thead><tr><th>#</th><th>المخاطرة</th><th>الاحتمال</th><th>التأثير</th><th>النتيجة</th><th>خطة المعالجة</th></tr></thead><tbody><tr><td>1</td><td><strong>تقلب سعر البن الأخضر المستورد</strong> (الدولار)</td><td>5</td><td>4</td><td><span class="badge badge-red">20 — حرج</span></td><td>تخزين 2-3 أشهر + تسعير مرن (مراجعة ربع سنوية) + عقد توريد ثابت السعر مع مورد</td></tr><tr><td>2</td><td><strong>نفاد السيولة قبل الوصول للربحية</strong> (Runway &lt; 6 أشهر)</td><td>4</td><td>5</td><td><span class="badge badge-red">20 — حرج</span></td><td>خطة Cash Flow 9 أشهر + احتياطي 3 أشهر + البدء بأصغر حجم ممكن</td></tr><tr><td>3</td><td><strong>عدم تحصيل مستحقات (Doubtful debt)</strong></td><td>2</td><td>3</td><td><span class="badge badge-yellow">6 — منخفض</span></td><td>بيع كاش فقط في البداية + فوري أونلاين = عدم ائتمان</td></tr></tbody></table>
+
+<h3>&#9881;&#65039; ثانياً: المخاطر الإنتاجية</h3>
+<table><thead><tr><th>#</th><th>المخاطرة</th><th>الاحتمال</th><th>التأثير</th><th>النتيجة</th><th>خطة المعالجة</th></tr></thead><tbody><tr><td>4</td><td><strong>عدم اتقان التحميص</strong> (حرق أو عدم نضج متساوٍ)</td><td>5</td><td>5</td><td><span class="badge badge-red">25 — حرج</span></td><td>تدريب مكثف 2-4 أسابيع عند محمصة معتمدة + تجارب متعددة قبل الافتتاح + بطاقة درجات التحميص مرجعية</td></tr><tr><td>5</td><td><strong>عطل المعدات</strong> (محمصة أو مطحونة)</td><td>3</td><td>4</td><td><span class="badge badge-orange">12 — متوسط</span></td><td>صيانة وقائية أسبوعية + موردي قطع غيار معروفين مسبقاً + الاتفاق مع محمصة صديقة كـ backup</td></tr><tr><td>6</td><td><strong>فقدان جودة البن الخام</strong> (رطوبة أو تخزين سيء)</td><td>3</td><td>3</td><td><span class="badge badge-yellow">9 — متوسط</span></td><td>حاويات محكمة الإغلاق + تخزين جاف وبارد + شراء بكميات صغيرة (20-50 كجم)</td></tr></tbody></table>
+
+<h3>&#128736;&#65039; ثالثاً: المخاطر التشغيلية</h3>
+<table><thead><tr><th>#</th><th>المخاطرة</th><th>الاحتمال</th><th>التأثير</th><th>النتيجة</th><th>خطة المعالجة</th></tr></thead><tbody><tr><td>7</td><td><strong>رفض أو تأخير تسجيل NFSA</strong></td><td>3</td><td>5</td><td><span class="badge badge-orange">15 — عالي</span></td><td>تجهيز وثائق كاملة قبل التقديم + استشارة متخصص NFSA + معمل معتمد مسبقاً</td></tr><tr><td>8</td><td><strong>ضعف المبيعات في أول 3 أشهر</strong></td><td>4</td><td>3</td><td><span class="badge badge-orange">12 — متوسط</span></td><td>ميزانية تسويق كافية + تذوق يومي + واتساب بزنس نشط + تحميل المنتج على المحل نفسه</td></tr><tr><td>9</td><td><strong>المنافسة غير المتوقعة</strong> (محل مشابه في فيصل)</td><td>2</td><td>3</td><td><span class="badge badge-yellow">6 — منخفض</span></td><td>التمييز بالتخصص والجودة + علاقات شخصية مع العملاء + تذوق مجاني</td></tr><tr><td>10</td><td><strong>مشاكل الموقع</strong> (إيجار أو تراخيص المحل)</td><td>3</td><td>3</td><td><span class="badge badge-yellow">9 — متوسط</span></td><td>عقد إيجار واضح + فترة إعفاء 1-2 شهر + التأكد من ترخيص النشاط</td></tr></tbody></table>
+
+<h3>&#127974; رابعاً: مخاطر رأس المال</h3>
+<table><thead><tr><th>#</th><th>المخاطرة</th><th>الاحتمال</th><th>التأثير</th><th>النتيجة</th><th>خطة المعالجة</th></tr></thead><tbody><tr><td>11</td><td><strong>تجاوز ميزانية التأسيس</strong></td><td>4</td><td>3</td><td><span class="badge badge-orange">12 — متوسط</span></td><td>احتياطي 15% فوق الميزانية + البدء بمعدات مستعملة + خطة Plan B بتكلفة أقل</td></tr><tr><td>12</td><td><strong>عدم كفاية رأس المال التشغيلي</strong></td><td>3</td><td>5</td><td><span class="badge badge-orange">15 — عالي</span></td><td>تخصيص 9 أشهر مصروفات ثابتة كحد أدنى + مصدر تمويل احتياطي (قرض عائلة/صديق)</td></tr></tbody></table>
+
+<h3>&#128200; مصفوفة المخاطر المرئية 5x5</h3>
+<div class="risk-matrix">
+  <div class="empty"></div><div class="header">تأثير 1</div><div class="header">تأثير 2</div><div class="header">تأثير 3</div><div class="header">تأثير 4</div><div class="header">تأثير 5</div>
+  <div class="prob-label">احتمال 5</div><div class="cell cy r5 c1">5</div><div class="cell co r5 c2">10</div><div class="cell co r5 c3">15</div><div class="cell cr r5 c4">20</div><div class="cell cr r5 c5">25</div>
+  <div class="prob-label">احتمال 4</div><div class="cell cg r4 c1">4</div><div class="cell cy r4 c2">8</div><div class="cell co r4 c3">12</div><div class="cell cr r4 c4">16</div><div class="cell cr r4 c5">20</div>
+  <div class="prob-label">احتمال 3</div><div class="cell cg r3 c1">3</div><div class="cell cg r3 c2">6</div><div class="cell cy r3 c3">9</div><div class="cell co r3 c4">12</div><div class="cell co r3 c5">15</div>
+  <div class="prob-label">احتمال 2</div><div class="cell cg r2 c1">2</div><div class="cell cg r2 c2">4</div><div class="cell cg r2 c3">6</div><div class="cell cy r2 c4">8</div><div class="cell cy r2 c5">10</div>
+  <div class="prob-label">احتمال 1</div><div class="cell cg r1 c1">1</div><div class="cell cg r1 c2">2</div><div class="cell cg r1 c3">3</div><div class="cell cg r1 c4">4</div><div class="cell cy r1 c5">5</div>
+</div>
+<div class="risk-legend">
+  <span><div class="dot cg"></div> منخفض (1-6)</span>
+  <span><div class="dot cy"></div> متوسط (7-12)</span>
+  <span><div class="dot co"></div> عالي (13-19)</span>
+  <span><div class="dot cr"></div> حرج (20-25)</span>
+</div></div>
+</div>
+<div class="section" id="sec10">
+  <div class="section-header" onclick="toggleSection('sec10')">
+    <span class="icon">&#128176;</span>
+    <h2>10 | التحليل المالي وإدارة رأس المال</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<p>التحليل المالي التالي مبني على <strong>السيناريو المُوصى به (مشروع صغير)</strong> برأس مال أولي <strong>80,000 ج.م</strong> (متوسط التأسيس ~55,000 + 5 أشهر تشغيل). يشمل Inflation Buffer + تكاليف NFSA + تضخم واقعي. جميع الأرقام بالجنيه المصري.</p>
+
+<h3>&#128203; الافتراضات الأساسية</h3>
+<table><thead><tr><th>الافتراض</th><th>القيمة</th></tr></thead><tbody><tr><td>رأس المال الأولي</td><td><strong>80,000 ج.م</strong></td></tr><tr><td>متوسط سعر الطلب (250 جم محمصة + مطحونة)</td><td><strong>90 ج.م</strong></td></tr><tr><td>تكلفة إنتاج الطلب (متوسط: بن + تغليف + استيكر)</td><td><strong>35 ج.م (39%)</strong></td></tr><tr><td>هامش المساهمة (Contribution Margin)</td><td><strong>55 ج.م/طلب (61%)</strong></td></tr><tr><td>نموذج الدفع</td><td>كاش 70% | فوري 20% | بطاقة 10%</td></tr><tr><td>Inflation Buffer</td><td>+15% كل 3 أشهر على التكاليف المتغيرة</td></tr></tbody></table>
+
+<h3>&#128200; التدفق النقدي — 6 أشهر (بالجنيه المصري)</h3>
+<table><thead><tr><th>البند</th><th>شهر 1</th><th>شهر 2</th><th>شهر 3</th><th>شهر 4</th><th>شهر 5</th><th>شهر 6</th></tr></thead><tbody><tr><td><td colspan="7" style="background:#eafaf1;font-weight:700">&#11014;&#65039; الإيرادات</td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>مبيعات المحل</td><td>1,500</td><td>5,000</td><td>10,000</td><td>16,000</td><td>24,000</td><td>32,000</td></tr><tr><td>مبيعات أونلاين</td><td>0</td><td>500</td><td>2,000</td><td>5,000</td><td>9,000</td><td>14,000</td></tr><tr><td><strong>إجمالي الإيرادات</strong></td><td><strong>1,500</strong></td><td><strong>5,500</strong></td><td><strong>12,000</strong></td><td><strong>21,000</strong></td><td><strong>33,000</strong></td><td><strong>46,000</strong></td></tr><tr><td><td colspan="7" style="background:#fde8e8;font-weight:700">&#11015;&#65039; المصروفات الثابتة</td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>إيجار المحل</td><td>4,000</td><td>4,000</td><td>4,000</td><td>4,000</td><td>4,000</td><td>4,000</td></tr><tr><td>رواتب (صاحب المشروع)</td><td>6,000</td><td>6,000</td><td>6,000</td><td>8,000</td><td>8,000</td><td>8,000</td></tr><tr><td>مرافق + إنترنت</td><td>1,200</td><td>1,200</td><td>1,200</td><td>1,200</td><td>1,200</td><td>1,200</td></tr><tr><td><strong>إجمالي ثابت</strong></td><td><strong>11,200</strong></td><td><strong>11,200</strong></td><td><strong>11,200</strong></td><td><strong>13,200</strong></td><td><strong>13,200</strong></td><td><strong>13,200</strong></td></tr><tr><td><td colspan="7" style="background:#fef9e7;font-weight:700">&#11015;&#65039; المصروفات المتغيرة</td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>بن أخضر خام</td><td>500</td><td>1,800</td><td>3,500</td><td>6,000</td><td>9,500</td><td>13,000</td></tr><tr><td>تغليف + استيكر</td><td>150</td><td>500</td><td>1,050</td><td>1,800</td><td>2,850</td><td>4,000</td></tr><tr><td>Inflation Buffer (+15%)</td><td>0</td><td>0</td><td>680</td><td>1,170</td><td>1,850</td><td>2,550</td></tr><tr><td>توصيل</td><td>0</td><td>100</td><td>400</td><td>1,000</td><td>1,800</td><td>2,800</td></tr><tr><td>تسويق (تذوق + سوشيال)</td><td>2,000</td><td>2,000</td><td>2,500</td><td>3,000</td><td>3,500</td><td>4,000</td></tr><tr><td><strong>إجمالي متغير</strong></td><td><strong>2,650</strong></td><td><strong>4,400</strong></td><td><strong>8,130</strong></td><td><strong>12,970</strong></td><td><strong>19,500</strong></td><td><strong>26,350</strong></td></tr><tr><td><td colspan="7" style="background:#ebf5fb;font-weight:700">&#12310; مصروفات تأسيس (مرة واحدة — شهر 1 فقط)</td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>معدات (محمصة + مطحونة + فاكيوم + ميزان)</td><td>25,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>NFSA + تحاليل + تراخيص</td><td>14,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>تصميم هوية + لافتة + تجهيز محل</td><td>8,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td><td style="background:#2c3e50;color:#fff;font-weight:700">إجمالي المصروفات</td><td class="cf-neg" style="background:#2c3e50;color:#fff">60,850</td><td class="cf-neg">15,600</td><td class="cf-neg">19,330</td><td class="cf-neg">26,170</td><td class="cf-neg">32,700</td><td class="cf-neg">39,550</td></td></tr><tr><td><strong>التدفق الشهري</strong></td><td><span class="cf-neg">-59,350</span></td><td><span class="cf-neg">-10,100</span></td><td><span class="cf-neg">-7,330</span></td><td><span class="cf-neg">-5,170</span></td><td><span class="cf-neg">+300</span></td><td><span class="cf-pos">+6,450</span></td></tr><tr><td><strong>الرصيد التراكمي</strong></td><td>20,150</td><td>10,050</td><td>2,720</td><td>1,000</td><td>1,300</td><td>7,750</td></tr></tbody></table>
+
+<div class="stats-grid">
+  <div class="stat-card danger"><div class="number">-12,608</div><div class="label">متوسط معدل الحرق الشهري (ج.م)</div></div>
+  <div class="stat-card"><div class="number">6.4 شهر</div><div class="label">Runway (مدة الاستمرار)</div></div>
+  <div class="stat-card accent"><div class="number">الشهر 5-6</div><div class="label">التوقع: بداية الربحية الشهرية</div></div>
+  <div class="stat-card success"><div class="number">61%</div><div class="label">هامش المساهمة</div></div>
+</div>
+
+<div class="alert alert-warning">
+  <span class="ai">&#9888;&#65039;</span>
+  <div><strong>ملاحظة:</strong> المشروع يبدأ في تحقيق ربحية شهرية إيجابية في الشهر 5 (بسيط) والشهر 6 (واضح). رأس المال 80,000 ج.م يكفي بهامش أمان. في حالة بطء المبيعات، ابدأ بمشروع متناهي الصغر (كارتر بمحطة بدون تحميص = 30,000-40,000 ج.م فقط) كمرحلة اختبار.</div>
+</div>
+
+<h3>&#128200; نقطة التعادل (Break-Even)</h3>
+<table><thead><tr><th>المعيار</th><th>القيمة</th></tr></thead><tbody><tr><td>التكاليف الثابتة الشهرية (بعد التأسيس)</td><td>13,200 ج.م</td></tr><tr><td>سعر الطلب المتوسط</td><td>90 ج.م</td></tr><tr><td>تكلفة الإنتاج للطلب (متوسط)</td><td>35 ج.م</td></tr><tr><td><strong>Contribution Margin</strong></td><td><strong>55 ج.م/طلب (61%)</strong></td></tr><tr><td><strong>نقطة التعادل الشهرية</strong></td><td><strong>240 طلب/شهر</strong> (13,200 / 55)</td></tr><tr><td>نقطة التعادل اليومية (26 يوم عمل)</td><td><strong>~9 طلبات/يوم</strong></td></tr></tbody></table>
+<div class="alert alert-info">
+  <span class="ai">&#8505;&#65039;</span>
+  <div><strong>هل 9 طلبات يومياً واقعي في فيصل؟</strong> نعم، جداً. شارع المطبعة حركة تجارية عالية. 9 طلبات = عميل كل 45 دقيقة خلال 8 ساعات عمل. مع التذوق المجاني + واتساب + إنستجرام، هذا الهدف قابل للتحقيق بحلول الشهر 4-5.</div>
+</div>
+
+<h3>&#128176; إدارة رأس المال ومصادر السيولة</h3>
+<table><thead><tr><th>البند</th><th>التفاصيل</th></tr></thead><tbody><tr><td><strong>مصدر رأس المال الأساسي</strong></td><td>توفير شخصي / مدخرات / قرض عائلي بدون فائدة</td></tr><tr><td><strong>مصدر بديل</strong></td><td>برامج تمويل المشروعات الصغيرة (بنك ناصر، جهاز تنمية المشروعات الصغيرة)</td></tr><tr><td><strong>سياسة إدارة السيولة</strong></td><td>فصل حساب التأسيس عن التشغيل + احتفاظ بـ 3 أشهر مصروفات ثابتة كاحتياطي</td></tr><tr><td><strong>مؤشرات مراقبة السيولة</strong></td><td>رصيد نهاية الشهر &gt; 0 | Runway &gt; 3 أشهر | الالتزام بالميزانية الشهرية</td></tr><tr><td><strong>خطة الطوارئ</strong></td><td>لو الرصيد انخفض تحت شهرين: تقليل المصروفات التسويقية + زيادة البيع أونلاين + طلب دعم مالي</td></tr></tbody></table></div>
+</div>
+<div class="section" id="sec11">
+  <div class="section-header" onclick="toggleSection('sec11')">
+    <span class="icon">&#9878;&#65039;</span>
+    <h2>11 | المتطلبات القانونية (NFSA والسوق المصري)</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<div class="alert alert-danger">
+  <span class="ai">&#128657;</span>
+  <div><strong>تحذير قانوني:</strong> بيع قهوة محمصة ومعبأة بدون تسجيل NFSA = مخالفة قانونية قد تصل لغرامات 50,000 - 500,000 ج.م + إغلاق المنشأة. لا تخاطر بالبدء بدون تراخيص.</div>
+</div>
+
+<table><thead><tr><th>#</th><th>المتطلب</th><th>الجهة</th><th>التكلفة التقديرية</th><th>المدة</th><th>الأولوية</th></tr></thead><tbody><tr><td>1</td><td><strong>السجل التجاري</strong></td><td>البوابة الإلكترونية (via.com.eg)</td><td>300-800 ج.م</td><td>3-7 أيام</td><td><span class="badge badge-red">إلزامي أولاً</span></td></tr><tr><td>2</td><td><strong>NFSA — القائمة البيضاء</strong></td><td>بوابة NFSA (nfsa.gov.eg)</td><td>10,000-18,000 ج.م</td><td>1-3 أشهر</td><td><span class="badge badge-red">إلزامي</span></td></tr><tr><td>3</td><td><strong>تحليل ميكروبيولوجي</strong></td><td>معمل معتمد (GHAS / المركز القومي)</td><td>1,500-3,000 ج.م</td><td>5-7 أيام</td><td><span class="badge badge-red">إلزامي</span></td></tr><tr><td>4</td><td><strong>شهادة صحية من المحليات</strong></td><td>حي / قسم / مديرية</td><td>500-2,000 ج.م</td><td>1-2 أسبوع</td><td><span class="badge badge-orange">إلزامي</span></td></tr><tr><td>5</td><td><strong>فحص طبي للعاملين</strong></td><td>وحدة صحية حكومية</td><td>200-500 ج.م/شخص</td><td>يوم واحد</td><td><span class="badge badge-orange">إلزامي</span></td></tr><tr><td>6</td><td><strong>تسجيل العلامة التجارية</strong></td><td>هيئة التنظيم والإدارة (IPA)</td><td>2,000-5,000 ج.م</td><td>3-6 أشهر</td><td><span class="badge badge-yellow">مهم جداً</span></td></tr><tr><td>7</td><td><strong>ضريبة القيمة المضافة (14%)</strong></td><td>مصلحة الضرائب</td><td>مجرد تسجيل</td><td>1-2 أسبوع</td><td><span class="badge badge-yellow">بعد 500K ج.م/سنة</span></td></tr></tbody></table>
+
+<h3>الشكل القانوني المُوصى به</h3>
+<table><thead><tr><th>البند</th><th>التوصية</th><th>السبب</th></tr></thead><tbody><tr><td>الشكل القانوني</td><td><strong>مؤسسة فردية</strong></td><td>مشروع صغير — سهولة التأسيس + تكلفة منخفضة + إجراءات بسيطة</td></tr><tr><td>متى تتحول لـ LLC؟</td><td>عند التوسع + دخول شركاء + طلب تمويل</td><td>LLC توفر حماية أصول لكن تكلفة أعلى ومحاسبة أكثر تعقيداً</td></tr></tbody></table>
+<div class="alert alert-warning">
+  <span class="ai">&#8505;&#65039;</span>
+  <div><strong>تنبيه:</strong> هذه المعلومات عامة وتعليمية فقط. لا تُغني عن استشارة محامٍ مرخص. قوانين NFSA والضرائب تتحدث دورياً.</div>
+</div></div>
+</div>
+<div class="section" id="sec12">
+  <div class="section-header" onclick="toggleSection('sec12')">
+    <span class="icon">&#128227;</span>
+    <h2>12 | استراتيجية التسويق (GTM 90 يوماً)</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<div class="alert alert-success">
+  <span class="ai">&#128640;</span>
+  <div><strong>القاعدة الذهبية:</strong> لا إعلانات مدفوعة في أول 90 يوماً! تحقق من ملاءمة المنتج للسوق (PMF) أولاً. استخدم قنوات مجانية أو منخفضة التكلفة.</div>
+</div>
+
+<h3>&#128197; خطة 90 يوماً — 3 مراحل</h3>
+<table><thead><tr><th>المرحلة</th><th>المدة</th><th>القنوات</th><th>الميزانية</th><th>الهدف</th><th>CAC المتوقع</th></tr></thead><tbody><tr><td><span class="badge badge-green">المرحلة 1</span><br><strong>التذوق الميداني</strong></td><td>أسبوع 1-4</td><td>تذوق أمام المحل + واتساب + تواصل شخصي</td><td>2,000-3,000 ج.م</td><td>20-30 عميل أول + 10 تذوق/يوم</td><td>15-30 ج.م</td></tr><tr><td><span class="badge badge-blue">المرحلة 2</span><br><strong>البناء الرقمي</strong></td><td>أسبوع 5-8</td><td>إنستجرام + فيسبوك + محتوى فيديو تحميص</td><td>1,500-2,500 ج.م</td><td>60-80 عميل + 500 متابع</td><td>25-50 ج.م</td></tr><tr><td><span class="badge badge-gold">المرحلة 3</span><br><strong>التوسع المدفوع</strong></td><td>أسبوع 9-12</td><td>إعلانات فيسبوك مستهدف + مؤثرين محليين</td><td>3,000-5,000 ج.م</td><td>100-150 عميل + طلبات متكررة</td><td>40-60 ج.م</td></tr></tbody></table>
+
+<h3>&#127760; استراتيجية أول 100 عميل</h3>
+<table><thead><tr><th>الاستراتيجية</th><th>النسبة</th><th>التفصيل</th><th>العدد المستهدف</th></tr></thead><tbody><tr><td><strong>التواصل المباشر</strong></td><td>40%</td><td>واتساب + اتصالات + جيران + زملاء</td><td>40 عميل</td></tr><tr><td><strong>الشبكة الشخصية</strong></td><td>25%</td><td>أصدقاء + عائلة + إحالات</td><td>25 عميل</td></tr><tr><td><strong>المجتمعات المحلية</strong></td><td>20%</td><td>مجموعات فيسبوك فيصل/الهرم + تليجرام</td><td>20 عميل</td></tr><tr><td><strong>المحتوى التعليمي</strong></td><td>15%</td><td>فيديوهات تحميص وتحضير قهوة على إنستجرام</td><td>15 عميل</td></tr></tbody></table>
+
+<h3>&#127968; أماكن التذوق الميداني المقترحة (فيصل والجيزة)</h3>
+<table><thead><tr><th>الموقع</th><th>الجمهور</th><th>الأنسب لـ</th></tr></thead><tbody><tr><td>أمام المحل (شارع المطبعة)</td><td>مارة الشارع + سكان فيصل</td><td>تحميص مباشر + تذوق فوري</td></tr><tr><td>سوق المزارعين (الدقي)</td><td>متخصص ومهتم بالجودة</td><td>بن متخصص + درجات تحميص مختلفة</td></tr><tr><td>مجموعات فيسبوك محلية</td><td>سيدات منزليات + هواة طبخ</td><td>قهوة يومية + عروض خاصة</td></tr></tbody></table>
+
+<h3>&#128202; مؤشرات التسويق المستهدفة (KPIs)</h3>
+<table><thead><tr><th>المؤشر</th><th>الهدف (شهر 3)</th><th>الهدف (شهر 6)</th><th>كيف تقيسه</th></tr></thead><tbody><tr><td><strong>CAC</strong></td><td>&lt; 40 ج.م</td><td>&lt; 30 ج.م</td><td>إجمالي التسويق / عدد العملاء الجدد</td></tr><tr><td><strong>LTV</strong></td><td>&gt; 250 ج.م</td><td>&gt; 450 ج.م</td><td>متوسط الطلب x التكرار السنوي</td></tr><tr><td><strong>LTV : CAC</strong></td><td>&gt; 3x</td><td>&gt; 5x</td><td>LTV / CAC (الذهبي: 3x+)</td></tr><tr><td><strong>Repeat Order Rate</strong></td><td>&gt; 30%</td><td>&gt; 50%</td><td>العملاء العائدون / الإجمالي</td></tr><tr><td><strong>الطلبات/يوم</strong></td><td>4-7</td><td>9-15</td><td>نقطة البيع + واتساب</td></tr></tbody></table></div>
+</div>
+<div class="section" id="sec13">
+  <div class="section-header" onclick="toggleSection('sec13')">
+    <span class="icon">&#128197;</span>
+    <h2>13 | خارطة الطريق الزمنية</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<div class="timeline">
+  <div class="timeline-item">
+    <h4>المرحلة 1: التأسيس القانوني والبحث</h4>
+    <span class="dur">&#128197; الأسبوع 1-4</span>
+    <ul>
+      <li>تسجيل السجل التجاري (3-7 أيام)</li>
+      <li>بدء إجراءات NFSA + تجهيز الملف</li>
+      <li>البحث عن موقع المحل في المطبعة فيصل (30-40 متر)</li>
+      <li>الحصول على 3 عروض أسعار من موردي بن أخضر</li>
+      <li>الحصول على 3 عروض أسعار من موردي أكياس فاكيوم + استيكر</li>
+      <li>إجراء 10 مقابلات عملاء محتملين في منطقة فيصل</li>
+      <li>زيارة 3 منافسين كعميل (لاحظ الجودة والأسعار والخدمة)</li>
+    </ul>
+  </div>
+  <div class="timeline-item">
+    <h4>المرحلة 2: التجهيز والتدريب</h4>
+    <span class="dur">&#128295; الأسبوع 5-8</span>
+    <ul>
+      <li>استئجار المحل + التجهيز البسيط</li>
+      <li>شراء المعدات (محمصة + مطحونة + فاكيوم + ميزان)</li>
+      <li>استكمال NFSA + التحاليل الميكروبيولوجية</li>
+      <li>تصميم الهوية البصرية والشعار + طباعة الاستيكر</li>
+      <li>عمل لافتة المحل</li>
+      <li><strong>تدريب عملي على التحميص 2-4 أسابيع عند محمصة معتمدة</strong> (حرج!)</li>
+      <li>شراء أول دفعة بن أخضر (20-30 كجم من 2-3 موردين)</li>
+      <li>تجارب تحميص متعددة لتحديد درجات التحميص المثلى</li>
+    </ul>
+  </div>
+  <div class="timeline-item">
+    <h4>المرحلة 3: الإطلاق التجريبي (Soft Launch)</h4>
+    <span class="dur">&#128640; الأسبوع 9-10</span>
+    <ul>
+      <li>إنتاج أول دفعة (كميات صغيرة للتجربة)</li>
+      <li>تذوق ميداني يومي أمام المحل (50+ شخص)</li>
+      <li>إعداد واتساب بزنس + كتالوج المنتجات</li>
+      <li>إنشاء صفحة إنستجرام + أول 10 منشورات</li>
+      <li>جمع التغذية الراجعة وتحسين التحميص والتسعير</li>
+    </ul>
+  </div>
+  <div class="timeline-item">
+    <h4>المرحلة 4: الإطلاق الرسمي والنمو</h4>
+    <span class="dur">&#128200; الأسبوع 11-16</span>
+    <ul>
+      <li>افتتاح المحل رسمياً</li>
+      <li>بدء التسويق الرقمي (محتوى إنستجرام + فيسبوك)</li>
+      <li>متابعة LTV:CAC وضبط الأسعار</li>
+      <li>إضافة أصول بن جديدة بناءً على طلب العملاء</li>
+      <li>تقييم PMF (Product-Market Fit)</li>
+    </ul>
+  </div>
+  <div class="timeline-item">
+    <h4>المرحلة 5: الاستدامة والتوسع</h4>
+    <span class="dur">&#127919; الشهر 4-12</span>
+    <ul>
+      <li>الوصول لنقطة التعادل (240 طلب/شهر)</li>
+      <li>إطلاق باقة الاشتراك الشهري (قهوة الشهر)</li>
+      <li>التفاوض مع بقالات فاخرة في فيصل والهرم</li>
+      <li>تسجيل العلامة التجارية</li>
+      <li>تقييم التوسع: كشك ثانٍ في الدقي أو البيع أونلاين لكل مصر</li>
+    </ul>
+  </div>
+</div></div>
+</div>
+<div class="section" id="sec14">
+  <div class="section-header" onclick="toggleSection('sec14')">
+    <span class="icon">&#128640;</span>
+    <h2>14 | خطة نمو المشروع والتوسع</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<h3>&#128640; خطة نمو المشروع — من محل صغير لعلامة تجارية</h3>
+
+<table><thead><tr><th>المرحلة</th><th>المدة</th><th>الأهداف</th><th>الاستثمار المتوقع</th><th>مؤشر النجاح</th></tr></thead><tbody><tr><td><span class="badge badge-green">البذرة</span></td><td>الشهر 1-6</td><td>إثبات النموذج في فيصل + 200 عميل + ربحية شهرية</td><td>80,000 ج.م</td><td>240+ طلب/شهر + Cash Flow إيجابي</td></tr><tr><td><span class="badge badge-blue">الاستقرار</span></td><td>الشهر 6-12</td><td>300-500 عميل + إطلاق أونلاين + اشتراكات شهرية</td><td>20,000 ج.م إضافية</td><td>LTV:CAC &gt; 3x + Repeat Rate &gt; 40%</td></tr><tr><td><span class="badge badge-gold">التوسع</span></td><td>السنة 2</td><td>كشك ثانٍ (الدقي/المعادي) + B2B مقاهي + 1000+ عميل</td><td>100,000-150,000 ج.م</td><td>إيرادات سنة 2 &gt; 800,000 ج.م</td></tr><tr><td><span class="badge badge-red">العلامة التجارية</span></td><td>السنة 3+</td><td>علامة معروفة + محامص أكبر + بيع في سلاسل</td><td>200,000+ ج.م</td><td>إيرادات &gt; 2 مليون ج.م + فريق 5+</td></tr></tbody></table>
+
+<h3>&#128205; خطة التوسع الجغرافي</h3>
+<table><thead><tr><th>الخطوة</th><th>الموقع</th><th>السبب</th><th>المتطلبات</th></tr></thead><tbody><tr><td><strong>المحل الأول (الحالي)</strong></td><td>المطبعة فيصل</td><td>إيجار منخفض + حركة تجارية + قرب من الموردين</td><td>محل 30-40 م + محمصة 1-2 كجم</td></tr><tr><td><strong>الكشك الثاني</strong></td><td>الدقي أو المعادي</td><td>طبقة أعلى من العملاء + جودة واعية</td><td>كشك 15-20 م أو قسم في محل موجود</td></tr><tr><td><strong>البيع أونلاين لكل مصر</strong></td><td>إنستجرام + موقع + واتساب</td><td>وصول لكل محافظات مصر بدون محلات</td><td>شحن + تغليف منظم + تسويق رقمي</td></tr><tr><td><strong>B2B مقاهي ومطاعم</strong></td><td>القاهرة والجيزة</td><td>طلب مستمر بكميات كبيرة + هوامش أقل لكن حجم أعلى</td><td>أسعار جملة + محامص أكبر</td></tr></tbody></table>
+
+<h3>&#128161; محاور التوسع المتاحة</h3>
+<ul style="padding-right:20px">
+  <li><strong>منتجات جديدة:</strong> إضافة قهوة منسقة (Blends) بأسماء مميزة + قهوة بنكهات (فانيلا، كراميل، هيل)</li>
+  <li><strong>باقات الاشتراك:</strong> باقة شهرية (250 جم x 4) بتوصيل منزلي = دخل ثابت شهري</li>
+  <li><strong>دورات تعليمية:</strong> ورش عمل تحميص وتحضير قهوة في المحل = مصدر دخل إضافي + تسويق</li>
+  <li><strong>شراكات:</strong> توريد بن محمص لمقاهي صغيرة + بقالات فاخرة</li>
+  <li><strong>العلامة التجارية:</strong> تحويل الاسم لعلامة مسجلة وباعة منتجات ببياض (White label) لجهات أخرى</li>
+</ul></div>
+</div>
+<div class="section" id="sec15">
+  <div class="section-header" onclick="toggleSection('sec15')">
+    <span class="icon">&#128300;</span>
+    <h2>15 | بحث العملاء والمنافسين والموردين</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<div class="alert alert-info">
+  <span class="ai">&#8505;&#65039;</span>
+  <div><strong>هذا القسم يلخص نتائج البحث الميداني المطلوب إجراؤه قبل بدء المشروع.</strong> الأرقام الحالية تقديرية ويمكن تحديثها بالبيانات الفعلية.</div>
+</div>
+
+<h3>&#128100; بحث العملاء — نموذج المقابلة المقترح</h3>
+<p>يُنصح بإجراء <strong>10 مقابلات على الأقل</strong> مع سكان فيصل والهرم (الشريحة المستهدفة). أسئلة مقترحة:</p>
+<table><thead><tr><th>#</th><th>السؤال</th><th>الهدف من السؤال</th></tr></thead><tbody><tr><td>1</td><td>إيه أخر قهوة اشتريتها ومن فين؟ وكم اتدفعت؟</td><td>فهم السلوك الحالي + الأسعار المدفوعة</td></tr><tr><td>2</td><td>إيه اللي بيضايقك في القهوة اللي بتشتريها حالياً؟</td><td>تحديد نقاط الألم (Pain Points)</td></tr><tr><td>3</td><td>لو لاقيت قهوة محمصة قدامك يومياً بسعر كذا، هتشتريها؟</td><td>قياس الملاءمة والسعر المقبول</td></tr><tr><td>4</td><td>إيه أهم حاجة ليك في القهوة؟ (الطعم، السعر، التغليف، الماركة؟)</td><td>فهم أولويات العميل</td></tr><tr><td>5</td><td>بتشرب قهوة إيه؟ (تركي، إسبريسو، فلت، نسكافيه؟)</td><td>فهم أنواع القهوة المفضلة = تحديد المنتج</td></tr><tr><td>6</td><td>من فين بتعرف على منتجات جديدة؟ (سوشيال ميديا، أصدقاء، سوق؟)</td><td>تحديد القنوات التسويقية الأكثر فاعلية</td></tr></tbody></table>
+
+<h3>&#128300; بحث المنافسين — الزيارات الميدانية المطلوبة</h3>
+<table><thead><tr><th>الزيارة</th><th>الهدف</th><th>ما تلاحظه</th></tr></thead><tbody><tr><td><strong>بن الوالي — الهرم</strong></td><td>منافس رئيسي + يعرف التحميص</td><td>الأسعار + جودة التحميص + خدمة العملاء + أنواع البن + التغليف</td></tr><tr><td><strong>محل بن بشارع فيصل الرئيسي</strong></td><td>أقرب منافس جغرافياً</td><td>الأسعار + حجم العملاء + ساعات الذروة + المنتجات الأكثر مبيعاً</td></tr><tr><td><strong>متجر قهوة أونلاين (إنستجرام)</strong></td><td>منافس رقمي</td><td>الأسعار + التغليف + عدد المتابعين + أسلوب التسويق</td></tr><tr><td><strong>سوبرماركت (سبينالس)</strong></td><td>بديل العميل الحالي</td><td>أسعار وتواريخ صلاحية البن المعبأ + العلامات المتاحة</td></tr></tbody></table>
+
+<h3>&#128230; بحث الموردين — العروض المطلوبة</h3>
+<table><thead><tr><th>المورد</th><th>ما تطلبه منه</th><th>المعلومات المطلوبة في العرض</th></tr></thead><tbody><tr><td><strong>مورد بن أخضر (2-3 موردين)</strong></td><td>عينات + أسعار جملة + حد أدنى للطلب</td><td>سعر الكجم لكل أصل (برازيلي، إثيوبي، كولومبي، يمني) + حد أدنى + شروط الدفع + تكلفة الشحن</td></tr><tr><td><strong>مورد أكياس فاكيوم</strong></td><td>أسعار + مقاسات + أقل كمية</td><td>سعر الكجم أو 1000 قطعة + مقاسات 250 جم و 500 جم + تكلفة طباعة الشعار</td></tr><tr><td><strong>مورد استيكر</strong></td><td>أسعار + عينات</td><td>سعر 1000 و 5000 قطعة + تكلفة التصميم + مدة التنفيذ</td></tr></tbody></table></div>
+</div>
+<div class="section" id="sec16">
+  <div class="section-header" onclick="toggleSection('sec16')">
+    <span class="icon">&#127919;</span>
+    <h2>16 | تقييم المشروع والخطوات التالية</h2>
+    <span class="toggle">&#9660;</span>
+  </div>
+  <div class="section-body">
+<h3>&#127919; تقييم المشروع وفق معايير متعددة</h3>
+<table><thead><tr><th>#</th><th>المعيار</th><th>الوزن</th><th>التقييم</th><th>النقاط</th><th>ملاحظات</th></tr></thead><tbody><tr><td>1</td><td>وضوح المشكلة</td><td>15%</td><td>13/15</td><td><strong>1.95</strong></td><td>مشكلة واضحة (جودة البن الجاهز) — تحتاج تحقق بمقابلات</td></tr><tr><td>2</td><td>عمق التحليل</td><td>20%</td><td>16/20</td><td><strong>3.2</strong></td><td>SWOT + TAM/SAM/SOM + Persona + بحث موردين ومنافسين</td></tr><tr><td>3</td><td>متانة النموذج</td><td>20%</td><td>16/20</td><td><strong>3.2</strong></td><td>BMC كاملة + نموذج إيرادات + خطة نمو 4 مراحل</td></tr><tr><td>4</td><td>جودة التحليلات المالية</td><td>20%</td><td>18/20</td><td><strong>3.6</strong></td><td>Cash Flow 6 أشهر + Break-Even + إدارة رأس مال + 4 فئات مخاطر</td></tr><tr><td>5</td><td>خطة التنفيذ</td><td>15%</td><td>8/15</td><td><strong>1.2</strong></td><td>GTM 90 يوماً + Timeline + MVP + قائمة مستلزمات مفصلة</td></tr><tr><td>6</td><td>الجاهزية القانونية</td><td>10%</td><td>7/10</td><td><strong>0.7</strong></td><td>NFSA + 7 متطلبات قانونية + شكل مؤسسة فردية</td></tr></tbody></table>
+<div class="stats-grid">
+  <div class="stat-card accent"><div class="number">78/100</div><div class="label">التقييم الإجمالي</div></div>
+  <div class="stat-card success"><div class="number">قابل للتطوير</div><div class="label">التوصية</div></div>
+</div>
+
+<h3>&#9989; أقوى 4 نقاط</h3>
+<table><thead><tr><th></th><th>النقطة</th><th>التفاصيل</th></tr></thead><tbody><tr><td>&#9989;</td><td><strong>سوق مستمر وغير موسمي</strong></td><td>القهوة منتج يومي، الطلب موجود ومستمر طوال السنة</td></tr><tr><td>&#9989;</td><td><strong>فرصة تمييز واضحة في فيصل</strong></td><td>لا يوجد منافس يقدم تحميص يومي أمام العميل في المنطقة</td></tr><tr><td>&#9989;</td><td><strong>هامش ربح ممتاز</strong></td><td>Contribution Margin 61% يتيح غرفة مناورة كبيرة</td></tr><tr><td>&#9989;</td><td><strong>تكاليف تأسيس منخفضة نسبياً</strong></td><td>80,000 ج.م كافية للبدء — مشروع صغير بسيط</td></tr></tbody></table>
+
+<h3>&#10060; أضعف 3 نقاط + خطة التحسين</h3>
+<table><thead><tr><th>النقطة</th><th>التحسين المطلوب</th><th>الأولوية</th></tr></thead><tbody><tr><td><strong>&#10060; لا خبرة سابقة في التحميص</strong></td><td>تدريب عملي 2-4 أسابيع عند محمصة معتمدة + تجارب 50+ دفعة قبل الافتتاح</td><td><span class="badge badge-red">حرج</span></td></tr><tr><td><strong>&#9888;&#65039; افتراضات غير محققة ميدانياً</strong></td><td>إجراء 10 مقابلات عملاء + تذوق 50+ شخص في فيصل + تحديث الدراسة</td><td><span class="badge badge-orange">عالي</span></td></tr><tr><td><strong>&#9888;&#65039; علامة تجارية جديدة</strong></td><td>البدء بالتسويق الميداني + بناء الثقة عبر التذوق + واتساب نشط</td><td><span class="badge badge-yellow">متوسط</span></td></tr></tbody></table>
+
+<h3>&#128203; قائمة المهام الفورية (هذا الأسبوع)</h3>
+<ul class="check-list">
+  <li class="pending">إجراء 10 مقابلات عملاء محتملين في منطقة فيصل والهرم</li>
+  <li class="pending">زيارة 3 منافسين كعميل (بن الوالي + محل فيصل + سوبرماركت)</li>
+  <li class="pending">الحصول على 3 عروض أسعار من موردي بن أخضر (العاشر + بولاق + المعادي)</li>
+  <li class="pending">الحصول على 3 عروض أسعار: أكياس فاكيوم + استيكر + لافتة</li>
+  <li class="pending">البحث عن محل 30-40 م في شارع المطبعة فيصل + معرفة الإيجار الفعلي</li>
+  <li class="pending">التسجيل في بوابة NFSA وبدء تجهيز ملف المنتج</li>
+  <li class="pending">فتح حساب واتساب بزنس بالاسم المقترح للمشروع</li>
+  <li class="pending">السؤال عن محامص للدخول فيها لتعلم التحميص عملياً</li>
+  <li class="pending">تدوين كل الملاحظات وتحديث هذه الدراسة بالبيانات الحقيقية</li>
+</ul>
+
+<div class="alert alert-success">
+  <span class="ai">&#127881;</span>
+  <div>
+    <strong>نصيحة أخيرة:</strong> هذه الدراسة ليست نهاية الطريق — بل <strong>بدايته</strong>. استخدمها كخريطة وحدّثها باستمرار بالبيانات الحقيقية. ابدأ صغيراً، تحرّك سريعاً، وتعلّم دائماً. النجاح في المشروعات الصغيرة ليس في الفكرة بل في التنفيذ والمثابرة.
+  </div>
+</div></div>
+</div>
+</div>
+
+<div class="footer">
+  <p>دراسة جدوى شاملة — محل تحميص وطحن قهوة صغير | المطبعة فيصل، الجيزة 2026</p>
+  <p>المبنية على: PMBOK | Lean Startup | Design Thinking | أسعار حقيقية من السوق المصري</p>
+  <p style="margin-top:8px;font-size:0.88em;color:#aaa">&#8505;&#65039; هذه الدراسة لأغراض تعليمية وتخطيطية. لا تُغني عن استشارة متخصصة (محامي، محاسب، مستشار NFSA).</p>
+</div>
+
+<script>
+function toggleSection(id) { document.getElementById(id).classList.toggle('collapsed'); }
+if (window.innerWidth < 768) { document.querySelectorAll('.section').forEach(s => s.classList.add('collapsed')); }
+</script>
+</body>
+</html>
